@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sx-config>
+	<!-- 文件上传的配置信息 -->
+	<upload-config  type="com.sx.conf.UploadConfig">
+		<!-- 文件上传的最大限制(k) -->
+		<file-maxsize>102400</file-maxsize>
+		<!-- 读取到内存中最大限制(k) -->
+		<load-maxsize>4096</load-maxsize>
+		<!-- 文件如果超出内存读取的最大限制，要产生临时文件，临时文件的存放目录 -->
+		<temp-path>sysfiles</temp-path>
+		<!-- 文件上传到服务器端目录 -->
+		<file-path>sysfiles</file-path>
+	</upload-config>
+	<!-- rbac的配置信息 -->
+	<!-- <rbac-config type="com.sx.conf.RbacConfig">
+		<rbacurl>http://130.10.7.101:9090/rbac</rbacurl>
+	</rbac-config> -->
+	<!-- 多数据源配置信息 -->
+	<multi-db-config type="com.sx.conf.MultiDbConfig">
+		<item>
+			<dbs>sqlserver</dbs>
+			<cfgfile>dbacfg.xml</cfgfile>
+			<driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</driver>
+		</item>
+		<item>
+			<dbs>rbac</dbs>
+			<cfgfile>dbacfg.xml</cfgfile>
+			<driver>oracle.jdbc.driver.OracleDriver</driver>
+			<default>false</default>
+		</item>
+		<item>
+			<dbs>ajapp</dbs>
+			<cfgfile>dbacfg.xml</cfgfile>
+			<driver>com.mysql.jdbc.Driver</driver>
+			<default>true</default>
+		</item>
+	</multi-db-config>
+	<!--log的配置信息-->
+	<log-config type="com.sx.conf.LogConfig">
+		<logxcfg>logxcfg.xml</logxcfg>
+		<app>map</app>
+		<debug>true</debug>
+	</log-config>
+	<!-- app的配置信息 -->
+	<app-config type="com.sx.conf.AppConfig">
+		<appcontext>map</appcontext>
+		<pagecountbyh>12</pagecountbyh>
+		<pagecountbyv>25</pagecountbyv>
+	</app-config>
+</sx-config>
